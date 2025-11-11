@@ -1,39 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh | DevOps Engineer</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/6f3f6ff0e9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6adf5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <canvas id="bg"></canvas>
+  <div class="background"></div>
 
-  <div class="container">
-    <div class="left">
-      <img src="profile.jpeg" alt="Abhishek Singh" class="profile-pic">
+  <!-- Navbar -->
+  <header>
+    <h2>Abhishek Singh</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <img src="profile.jpeg" alt="Abhishek Singh">
     </div>
-
-    <div class="right">
-      <h1>Abhishek Singh</h1>
+    <div class="hero-right">
+      <h1>Hi, I'm <span>Abhishek Singh</span></h1>
       <h2>DevOps Engineer</h2>
-      <p id="experience" class="exp-text">Experience: Calculating...</p>
-
-      <p>
-        🚀 Passionate DevOps Engineer skilled in <b>Jenkins, Docker, Kubernetes, Linux, Terraform</b>.<br>
-        Cloud Expertise: <b>AWS (2+ years)</b>, <b>GCP (1 year)</b>, <b>Azure (1 year)</b>.
-      </p>
-
+      <p id="experience">Experience: Calculating...</p>
+      <p>Building scalable, reliable, and automated cloud systems with passion for CI/CD, Kubernetes, and Cloud Infrastructure.</p>
       <div class="buttons">
         <a href="mailto:Abhishek84277@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
-
-      <p class="github"><i class="fab fa-github"></i> abhishek8288</p>
     </div>
-  </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a results-driven <b>DevOps Engineer</b> with a strong background in automation, CI/CD pipelines, and cloud infrastructure management.  
+      I thrive on bridging the gap between development and operations to deliver fast, reliable, and scalable systems.  
+      My goal is to build infrastructure that supports high availability and continuous innovation.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="experience">
+    <h2>Professional Experience</h2>
+    <div class="job-card">
+      <h3>Verse Innovation Pvt. Ltd — <span>DevOps Engineer</span></h3>
+      <p class="job-duration">Jan 2022 – Present | Bengaluru, India</p>
+      <ul>
+        <li>Built CI/CD pipelines using Jenkins, GitHub Actions, and ArgoCD for zero-downtime deployment.</li>
+        <li>Deployed Kubernetes clusters for microservices architecture with automated scaling and monitoring.</li>
+        <li>Implemented Infrastructure as Code using Terraform across AWS, GCP, and Azure.</li>
+        <li>Integrated Prometheus & Grafana for monitoring, alerting, and observability.</li>
+        <li>Optimized resource usage and cloud cost across environments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>Tech Stack & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fab fa-aws"></i> AWS</div>
+      <div class="skill-card"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
+      <div class="skill-card"><i class="fab fa-docker"></i> Docker</div>
+      <div class="skill-card"><i class="fas fa-code-branch"></i> GitHub Actions</div>
+      <div class="skill-card"><i class="fas fa-tools"></i> Terraform</div>
+      <div class="skill-card"><i class="fab fa-linux"></i> Linux</div>
+      <div class="skill-card"><i class="fas fa-cloud"></i> GCP / Azure</div>
+      <div class="skill-card"><i class="fas fa-lock"></i> DevSecOps</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Interested in working together or have an opportunity? Let’s connect!</p>
+    <a href="mailto:Abhishek84277@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
+    <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Abhishek Singh | DevOps Portfolio</p>
+  </footer>
+
+  <script>
+    // Calculate real-time experience
+    const startDate = new Date('2022-01-01');
+    const now = new Date();
+    const diff = new Date(now - startDate);
+    const years = diff.getUTCFullYear() - 1970;
+    const months = diff.getUTCMonth();
+    document.getElementById('experience').textContent = `Experience: ${years} years ${months} months`;
+  </script>
 </body>
 </html>

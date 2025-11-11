@@ -7,64 +7,67 @@
 
 body {
   color: #fff;
-  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
   overflow-x: hidden;
+  background: linear-gradient(180deg, #0d1117 0%, #1e293b 100%);
 }
 
-/* Header navigation */
+/* Header */
 header {
   width: 100%;
   padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
   z-index: 100;
 }
 
 .logo {
-  color: #00bcd4;
+  color: #00e0ff;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
 nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  margin-left: 25px;
-  transition: color 0.3s;
+  font-weight: 500;
+  margin-left: 30px;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #00bcd4;
+  color: #00e0ff;
 }
 
-/* Main container */
+/* Container */
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   padding-top: 80px;
+  z-index: 5;
+  position: relative;
 }
 
 .container {
   display: flex;
   align-items: center;
   gap: 3rem;
-  z-index: 2;
+  z-index: 10;
 }
 
 .profile-photo {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  border: 3px solid #00bcd4;
-  box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+  border: 3px solid #00e0ff;
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.5);
   animation: float 4s ease-in-out infinite;
   object-fit: cover;
 }
@@ -78,19 +81,19 @@ h1 {
   margin-bottom: 0.3rem;
 }
 
-h2 {
-  font-weight: 400;
-  color: #b0e0e6;
+h1 span {
+  color: #00e0ff;
 }
 
-h1 span {
-  color: #00bcd4;
+h2 {
+  font-weight: 400;
+  color: #9ecae0;
 }
 
 .exp {
   font-size: 1.1rem;
   margin: 10px 0;
-  color: #b0e0e6;
+  color: #9ecae0;
 }
 
 .summary {
@@ -100,43 +103,24 @@ h1 span {
 
 /* About Section */
 .about {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   margin: 3rem auto;
   padding: 2rem;
   width: 80%;
   max-width: 900px;
   line-height: 1.8;
-  text-align: left;
-  animation: fadeIn 1.2s ease;
+  animation: fadeIn 1s ease;
 }
 
 .about h3 {
-  color: #00bcd4;
+  color: #00e0ff;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
-/* Floating background animation */
-.bg-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0,188,212,0.1) 20%, transparent 20%) repeat;
-  background-size: 200px 200px;
-  animation: moveBackground 20s linear infinite;
-  z-index: 0;
-  opacity: 0.2;
-}
-
-@keyframes moveBackground {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-200px, -200px); }
-}
-
+/* Floating animation */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -145,4 +129,56 @@ h1 span {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Background animation */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gear {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #00e0ff33 20%, transparent 20%),
+              radial-gradient(circle, #00e0ff33 20%, transparent 20%);
+  background-position: 0 0, 60px 60px;
+  background-size: 120px 120px;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  opacity: 0.2;
+}
+
+.g1 { top: 15%; left: 10%; width: 140px; height: 140px; animation-duration: 30s; }
+.g2 { top: 60%; left: 70%; width: 200px; height: 200px; animation-duration: 40s; }
+.g3 { top: 40%; left: 30%; width: 100px; height: 100px; animation-duration: 25s; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Floating clouds */
+.cloud {
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: cloudMove 60s linear infinite;
+}
+
+.c1 { top: 20%; left: -200px; animation-duration: 70s; }
+.c2 { top: 50%; left: -250px; animation-duration: 90s; }
+.c3 { top: 75%; left: -300px; animation-duration: 110s; }
+
+@keyframes cloudMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(120vw); }
 }

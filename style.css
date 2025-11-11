@@ -3,145 +3,126 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: #fff;
 }
 
 body {
-  background: radial-gradient(circle at top left, #0b132b, #1c2541);
-  overflow-x: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow: hidden;
 }
 
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-  opacity: 0.1;
-  z-index: -1;
-  animation: bgMove 20s infinite alternate ease-in-out;
-}
-
-@keyframes bgMove {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05); }
-}
-
-/* Navbar */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background: rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-}
-
-header h2 {
-  color: #00aaff;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #00aaff;
-}
-
-/* Hero Section */
-.hero {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 60px;
-  gap: 80px;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
-.hero-left img {
-  width: 220px;
-  height: 220px;
+.profile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 180px; /* smaller size */
+  height: 180px;
   border-radius: 50%;
-  border: 4px solid #00aaff;
-  box-shadow: 0 0 30px rgba(0,170,255,0.5);
-  animation: float 4s ease-in-out infinite;
+  border: 3px solid #00bcd4;
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+.info {
+  flex: 2;
+  padding-left: 2rem;
 }
 
-.hero-right h1 span {
-  color: #00aaff;
+h1 span {
+  color: #00bcd4;
 }
 
-.hero-right p {
-  margin: 10px 0;
-  color: #dbe4ee;
+.exp {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #b0e0e6;
+}
+
+.links {
+  margin-top: 15px;
 }
 
 .btn {
-  display: inline-block;
-  background: #00aaff;
-  color: #fff;
-  padding: 10px 20px;
-  margin: 8px;
-  border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-right: 10px;
+  transition: 0.3s;
+  font-weight: 600;
 }
 
-.btn:hover {
-  background: #0088cc;
+.email {
+  background: #009688;
+  color: white;
 }
 
 .linkedin {
-  background: #0077b5;
+  background: #0a66c2;
+  color: white;
 }
 
-section {
-  padding: 60px 80px;
+.btn:hover {
+  opacity: 0.8;
+  transform: translateY(-3px);
 }
 
-.about, .experience, .skills, .contact {
-  background: rgba(255, 255, 255, 0.05);
-  margin: 50px auto;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 0 30px rgba(0,170,255,0.2);
+.about {
+  margin-top: 30px;
+  line-height: 1.6;
 }
 
-/* Skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+.about h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
 }
 
-.skill-card {
-  text-align: center;
-  background: rgba(0,0,0,0.3);
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s, background 0.3s;
+/* Floating cloud animation */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.skill-card:hover {
-  transform: translateY(-8px);
-  background: rgba(0,170,255,0.2);
+.cloud {
+  background: url('https://i.ibb.co/1fsG7P1/cloud.png') no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background-size: contain;
+  opacity: 0.5;
+  animation: moveclouds 30s linear infinite;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0,0,0,0.5);
+.x1 { top: 10%; left: -200px; animation-duration: 45s; }
+.x2 { top: 30%; left: -250px; animation-duration: 60s; }
+.x3 { top: 50%; left: -300px; animation-duration: 70s; }
+.x4 { top: 70%; left: -350px; animation-duration: 85s; }
+.x5 { top: 85%; left: -400px; animation-duration: 100s; }
+
+@keyframes moveclouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(1200px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

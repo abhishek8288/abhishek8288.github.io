@@ -1,37 +1,44 @@
-// glowing particles background
+// Floating 3D cloud & gear animation (HTML Canvas)
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-let particles = [];
-for (let i = 0; i < 90; i++) {
+const particles = [];
+const icons = ["☁️", "⚙️", "💻", "☁️", "⚙️"];
+const colors = ["#00aaff", "#66ccff", "#88e0ff", "#3399ff"];
+
+for (let i = 0; i < 50; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.8,
-    dy: (Math.random() - 0.5) * 0.8,
+    size: Math.random() * 24 + 14,
+    speedX: Math.random() * 0.6 - 0.3,
+    speedY: Math.random() * 0.6 - 0.3,
+    icon: icons[Math.floor(Math.random() * icons.length)],
+    color: colors[Math.floor(Math.random() * colors.length)]
   });
 }
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,234,255,0.6)";
-    ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  particles.forEach(p => {
+    ctx.font = `${p.size}px Arial`;
+    ctx.fillStyle = p.color;
+    ctx.fillText(p.icon, p.x, p.y);
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
   });
   requestAnimationFrame(animate);
 }
 animate();
 
 window.addEventListener("resize", () => {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });

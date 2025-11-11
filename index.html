@@ -4,204 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh | DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
 
-    body {
-      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    header {
-      padding: 30px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #00eaff;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: #eee;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 400;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #00eaff;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .hero h3 {
-      font-weight: 400;
-      color: #00eaff;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 600px;
-      font-size: 1rem;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .section {
-      padding: 80px 50px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      color: #00eaff;
-      margin-bottom: 40px;
-    }
-
-    .skills, .certs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .skills span, .certs span {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.95rem;
-      transition: 0.3s ease;
-    }
-
-    .skills span:hover, .certs span:hover {
-      transform: translateY(-3px);
-      background: rgba(0, 234, 255, 0.15);
-      border-color: #00eaff;
-    }
-
-    .contact {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .contact a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.3rem;
-      transition: 0.3s ease;
-    }
-
-    .contact a:hover {
-      color: #00eaff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.8rem;
-      color: #999;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Floating Glow Animation */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .hero h2, .hero h3 {
-      animation: float 4s ease-in-out infinite;
-    }
-
-  </style>
+  <script src="https://kit.fontawesome.com/6f3f6ff0e9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Abhishek Singh</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <header class="hero">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Abhishek Singh" class="avatar" />
+      <h1>Abhishek Singh</h1>
+      <h2>DevOps Engineer</h2>
+      <p>3+ years • AWS | GCP | Azure | Kubernetes | Terraform | Jenkins | Linux</p>
+      <div class="socials">
+        <a href="https://github.com/abhishek8288" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </header>
 
-  <section class="hero" id="about">
-    <h2>DevOps Engineer</h2>
-    <h3>3+ Years of Experience</h3>
-    <p>
-      I design, automate, and manage scalable cloud infrastructures using AWS, GCP, and Azure. 
-      Skilled in CI/CD, containerization, and infrastructure as code — turning manual ops into streamlined pipelines.
-    </p>
-  </section>
+    <section class="skills">
+      <h3>Tech Stack</h3>
+      <div class="icons">
+        <i class="fab fa-aws"></i>
+        <i class="fab fa-docker"></i>
+        <i class="fas fa-cloud"></i>
+        <i class="fas fa-terminal"></i>
+        <i class="fab fa-linux"></i>
+        <i class="fas fa-cogs"></i>
+      </div>
+    </section>
 
-  <section class="section" id="skills">
-    <h2>Tech Stack & Tools</h2>
-    <div class="skills">
-      <span>GitHub</span>
-      <span>Jenkins</span>
-      <span>Docker</span>
-      <span>Kubernetes</span>
-      <span>Linux</span>
-      <span>Terraform</span>
-      <span>AWS</span>
-      <span>GCP</span>
-      <span>Azure</span>
-      <span>CI/CD</span>
-      <span>Monitoring</span>
-      <span>Cloud Infra Automation</span>
-    </div>
-  </section>
+    <section class="projects">
+      <h3>Projects</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4>CI/CD Pipeline (Jenkins + Docker)</h4>
+          <p>Automated build and deployment pipeline using Jenkins, Docker, and Kubernetes on AWS EKS.</p>
+        </div>
+        <div class="card">
+          <h4>Infrastructure as Code (Terraform)</h4>
+          <p>Reusable Terraform modules for multi-cloud provisioning (AWS, GCP, Azure).</p>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="certs">
-    <h2>Certifications</h2>
-    <div class="certs">
-      <span>GCP Associate Engineer</span>
-      <span>AWS Solutions Architect</span>
-      <span>Azure Fundamentals</span>
-    </div>
-  </section>
+    <section class="certifications">
+      <h3>Certifications</h3>
+      <ul>
+        <li>GCP Associate Cloud Engineer</li>
+        <li>AWS Solution Architect Associate</li>
+        <li>Microsoft Azure Fundamentals</li>
+      </ul>
+    </section>
 
-  <section class="section" id="contact">
-    <h2>Connect with Me</h2>
-    <div class="contact">
-      <a href="mailto:abhishek84277@gmail.com">📧 Email</a>
-      <a href="https://github.com/abhishek8288" target="_blank">🐙 GitHub</a>
-      <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank">💼 LinkedIn</a>
-    </div>
-  </section>
+    <footer>
+      <p>© 2025 Abhishek Singh | DevOps Portfolio</p>
+    </footer>
+  </div>
 
-  <footer>© 2025 Abhishek Singh | DevOps Engineer | All rights reserved.</footer>
+  <canvas id="bg"></canvas>
+  <script src="script.js"></script>
 </body>
 </html>

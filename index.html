@@ -4,101 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh | DevOps Engineer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6f3f6ff0e9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a2e0e6adf5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <div class="background"></div>
+  <canvas id="bg"></canvas>
 
-  <!-- Navbar -->
-  <header>
-    <h2>Abhishek Singh</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-left">
-      <img src="profile.jpeg" alt="Abhishek Singh">
+  <div class="main fade-in">
+    <!-- Left Section (Profile Photo) -->
+    <div class="photo">
+      <img src="profile.jpeg" alt="Abhishek Singh" class="avatar" />
     </div>
-    <div class="hero-right">
-      <h1>Hi, I'm <span>Abhishek Singh</span></h1>
+
+    <!-- Right Section (Content) -->
+    <div class="content">
+      <h1>Abhishek Singh</h1>
       <h2>DevOps Engineer</h2>
-      <p id="experience">Experience: Calculating...</p>
-      <p>Building scalable, reliable, and automated cloud systems with passion for CI/CD, Kubernetes, and Cloud Infrastructure.</p>
+      <p id="experience" class="experience-text"></p>
+      <p class="summary">
+        Experienced <b>DevOps Engineer</b> with hands-on expertise in <b>CI/CD automation, cloud infrastructure, and container orchestration</b>.  
+        Skilled in <b>AWS (2+ yrs)</b>, <b>GCP (1 yr)</b>, and <b>Azure (1 yr)</b>, leveraging modern tools like <b>Jenkins, Docker, Kubernetes, Terraform</b>, and <b>Linux</b> to deliver scalable, reliable cloud solutions.
+      </p>
+
       <div class="buttons">
         <a href="mailto:Abhishek84277@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- About -->
-  <section id="about" class="about">
+  <!-- About Me Section -->
+  <section class="about-section fade-in">
     <h2>About Me</h2>
     <p>
-      I'm a results-driven <b>DevOps Engineer</b> with a strong background in automation, CI/CD pipelines, and cloud infrastructure management.  
-      I thrive on bridging the gap between development and operations to deliver fast, reliable, and scalable systems.  
-      My goal is to build infrastructure that supports high availability and continuous innovation.
+      I’m a <b>DevOps Engineer</b> with over <span id="about-exp"></span> of professional experience in automating infrastructure and optimizing cloud environments.  
+      My expertise lies in building high-availability systems using <b>Kubernetes</b>, <b>Terraform</b>, and <b>CI/CD pipelines</b>.  
+      I’m passionate about cloud-native solutions, observability, and improving deployment efficiency through modern DevOps practices.
     </p>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="experience">
-    <h2>Professional Experience</h2>
-    <div class="job-card">
-      <h3>Verse Innovation Pvt. Ltd — <span>DevOps Engineer</span></h3>
-      <p class="job-duration">Jan 2022 – Present | Bengaluru, India</p>
-      <ul>
-        <li>Built CI/CD pipelines using Jenkins, GitHub Actions, and ArgoCD for zero-downtime deployment.</li>
-        <li>Deployed Kubernetes clusters for microservices architecture with automated scaling and monitoring.</li>
-        <li>Implemented Infrastructure as Code using Terraform across AWS, GCP, and Azure.</li>
-        <li>Integrated Prometheus & Grafana for monitoring, alerting, and observability.</li>
-        <li>Optimized resource usage and cloud cost across environments.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="skills">
-    <h2>Tech Stack & Tools</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><i class="fab fa-aws"></i> AWS</div>
-      <div class="skill-card"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
-      <div class="skill-card"><i class="fab fa-docker"></i> Docker</div>
-      <div class="skill-card"><i class="fas fa-code-branch"></i> GitHub Actions</div>
-      <div class="skill-card"><i class="fas fa-tools"></i> Terraform</div>
-      <div class="skill-card"><i class="fab fa-linux"></i> Linux</div>
-      <div class="skill-card"><i class="fas fa-cloud"></i> GCP / Azure</div>
-      <div class="skill-card"><i class="fas fa-lock"></i> DevSecOps</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Interested in working together or have an opportunity? Let’s connect!</p>
-    <a href="mailto:Abhishek84277@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
-    <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Abhishek Singh | DevOps Portfolio</p>
-  </footer>
-
   <script>
-    // Calculate real-time experience
-    const startDate = new Date('2022-01-01');
-    const now = new Date();
-    const diff = new Date(now - startDate);
-    const years = diff.getUTCFullYear() - 1970;
-    const months = diff.getUTCMonth();
-    document.getElementById('experience').textContent = `Experience: ${years} years ${months} months`;
+    // Calculate real-time experience from June 2022
+    function calculateExperience(startYear, startMonth) {
+      const start = new Date(startYear, startMonth - 1);
+      const now = new Date();
+      let years = now.getFullYear() - start.getFullYear();
+      let months = now.getMonth() - start.getMonth();
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      return { years, months };
+    }
+
+    const exp = calculateExperience(2022, 6);
+    const expText = `Experience: ${exp.years} year${exp.years > 1 ? 's' : ''} ${exp.months} month${exp.months > 1 ? 's' : ''}`;
+    document.getElementById('experience').textContent = expText;
+    document.getElementById('about-exp').textContent = `${exp.years} year${exp.years > 1 ? 's' : ''} ${exp.months} month${exp.months > 1 ? 's' : ''}`;
   </script>
 </body>
 </html>

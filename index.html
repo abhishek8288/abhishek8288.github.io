@@ -5,51 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Singh | DevOps Engineer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6f3f6ff0e9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <canvas id="bg"></canvas>
+
   <div class="container">
-    <header class="hero">
-      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Abhishek Singh" class="avatar" />
+    <header class="hero fade-in">
+      <img src="profile.jpg" alt="Abhishek Singh" class="avatar" />
       <h1>Abhishek Singh</h1>
       <h2>DevOps Engineer</h2>
-      <p>3+ years • AWS | GCP | Azure | Kubernetes | Terraform | Jenkins | Linux</p>
-      <div class="socials">
-        <a href="https://github.com/abhishek8288" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <p class="summary">
+        3+ years experience in CI/CD, Cloud Infrastructure & Automation.<br>
+        Skilled in AWS, GCP, Azure, Docker, Kubernetes, Terraform, Jenkins & Linux.
+      </p>
+
+      <div class="contact">
+        <a href="mailto:Abhishek84277@gmail.com"><i class="fas fa-envelope"></i> Abhishek84277@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+        <a href="https://github.com/abhishek8288" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </header>
 
-    <section class="skills">
-      <h3>Tech Stack</h3>
+    <section class="skills fade-in">
+      <h3>Core Technologies</h3>
       <div class="icons">
         <i class="fab fa-aws"></i>
         <i class="fab fa-docker"></i>
-        <i class="fas fa-cloud"></i>
-        <i class="fas fa-terminal"></i>
+        <i class="fab fa-kubernetes"></i>
+        <i class="fas fa-code-branch"></i>
         <i class="fab fa-linux"></i>
         <i class="fas fa-cogs"></i>
+        <i class="fab fa-terraform"></i>
       </div>
     </section>
 
-    <section class="projects">
-      <h3>Projects</h3>
+    <section class="projects fade-in">
+      <h3>Highlighted Projects</h3>
       <div class="card-grid">
         <div class="card">
-          <h4>CI/CD Pipeline (Jenkins + Docker)</h4>
-          <p>Automated build and deployment pipeline using Jenkins, Docker, and Kubernetes on AWS EKS.</p>
+          <h4>CI/CD Pipeline Automation</h4>
+          <p>Built Jenkins pipeline integrated with GitHub, Docker, and Kubernetes for automated deployments on AWS EKS.</p>
         </div>
         <div class="card">
-          <h4>Infrastructure as Code (Terraform)</h4>
-          <p>Reusable Terraform modules for multi-cloud provisioning (AWS, GCP, Azure).</p>
+          <h4>Infrastructure as Code</h4>
+          <p>Developed reusable Terraform modules for provisioning compute, networking, and storage across AWS and GCP.</p>
+        </div>
+        <div class="card">
+          <h4>Monitoring & Logging</h4>
+          <p>Set up Prometheus, Grafana, and Cloud Logging for multi-cloud environments improving observability and uptime.</p>
         </div>
       </div>
     </section>
 
-    <section class="certifications">
+    <section class="certifications fade-in">
       <h3>Certifications</h3>
       <ul>
         <li>GCP Associate Cloud Engineer</li>
@@ -63,7 +75,6 @@
     </footer>
   </div>
 
-  <canvas id="bg"></canvas>
   <script src="script.js"></script>
 </body>
 </html>

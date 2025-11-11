@@ -1,17 +1,17 @@
-// simple glowing particles background
+// glowing particles background
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
 let particles = [];
-for (let i = 0; i < 70; i++) {
+for (let i = 0; i < 90; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
     r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.7,
-    dy: (Math.random() - 0.5) * 0.7,
+    dx: (Math.random() - 0.5) * 0.8,
+    dy: (Math.random() - 0.5) * 0.8,
   });
 }
 

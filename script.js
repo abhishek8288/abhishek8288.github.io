@@ -1,4 +1,4 @@
-// Floating 3D cloud & gear animation (HTML Canvas)
+// === 3D Floating Cloud + Gear Animation ===
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -42,3 +42,23 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+// === Experience Counter ===
+const startDate = new Date("2022-01-01"); // your start date
+const experienceElement = document.getElementById("experience");
+
+function calculateExperience() {
+  const now = new Date();
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  experienceElement.textContent = `Experience: ${years} year${years !== 1 ? "s" : ""} ${months} month${months !== 1 ? "s" : ""}`;
+}
+
+calculateExperience();
+setInterval(calculateExperience, 86400000);

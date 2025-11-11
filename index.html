@@ -6,7 +6,7 @@
   <title>Abhishek Singh | DevOps Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <script>
-    // Calculate real-time experience since June 2022
+    // Real-time experience calculation
     function calculateExperience() {
       const startDate = new Date("2022-06-01");
       const now = new Date();
@@ -21,42 +21,54 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="profile">
-      <img src="profile.jpeg" alt="Abhishek Singh" class="profile-photo" />
-    </div>
+  <header>
+    <h2 class="logo">Abhishek Singh</h2>
+    <nav>
+      <a href="#about" class="nav-link">About</a>
+      <a href="mailto:abhishek84277@gmail.com" class="nav-link">Email</a>
+      <a href="https://www.linkedin.com/in/abhishek-singh-809755170/" target="_blank" class="nav-link">LinkedIn</a>
+    </nav>
+  </header>
 
-    <div class="info">
-      <h1>Hi, I'm <span>Abhishek Singh</span></h1>
-      <h2>DevOps Engineer</h2>
-      <p class="exp">Experience: <span id="exp"></span> years (June 2022 - Present)</p>
-
-      <div class="links">
-        <a href="mailto:abhishek@example.com" class="btn email">📧 Email</a>
-        <a href="https://linkedin.com/in/abhishek" target="_blank" class="btn linkedin">🔗 LinkedIn</a>
+  <main>
+    <div class="container">
+      <div class="profile">
+        <img src="profile.jpeg" alt="Abhishek Singh" class="profile-photo" />
       </div>
 
-      <section class="about">
-        <h3>About Me</h3>
-        <p>
-          I'm a passionate <strong>DevOps Engineer</strong> with 3+ years of experience 
-          automating CI/CD pipelines, managing Kubernetes clusters, and deploying 
-          scalable cloud infrastructures across <strong>GCP</strong>, <strong>AWS</strong>, and <strong>Azure</strong>.
-        </p>
-        <p>
-          I specialize in <strong>Docker, Terraform, Jenkins, Ansible, and Prometheus</strong> —
-          building reliable, secure, and automated systems that empower teams to deliver faster.
-        </p>
-      </section>
-    </div>
-  </div>
+      <div class="info">
+        <h1>Hi, I'm <span>Abhishek Singh</span></h1>
+        <h2>DevOps Engineer</h2>
+        <p class="exp">Experience: <span id="exp"></span> years (June 2022 - Present)</p>
 
-  <div class="clouds">
-    <div class="cloud x1"></div>
-    <div class="cloud x2"></div>
-    <div class="cloud x3"></div>
-    <div class="cloud x4"></div>
-    <div class="cloud x5"></div>
-  </div>
+        <p class="summary">
+          A skilled <strong>DevOps Engineer</strong> with hands-on expertise in <strong>GCP</strong>, <strong>AWS</strong>,
+          and <strong>Azure</strong>. Experienced in automating cloud infrastructure using 
+          <strong>Terraform, Jenkins, Docker, Kubernetes</strong> and CI/CD pipelines to deliver secure,
+          scalable systems.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <section id="about" class="about">
+    <h3>About Me</h3>
+    <p>
+      Over <span id="exp2"></span> years of industry experience, building and maintaining DevOps pipelines 
+      across multi-cloud environments. I thrive on automating repetitive tasks, monitoring system reliability,
+      and creating efficient cloud solutions that scale effortlessly.
+    </p>
+    <p>
+      My expertise includes <strong>infrastructure-as-code, CI/CD pipelines, container orchestration, and 
+      performance monitoring</strong>. I’m currently exploring advanced GCP automation and hybrid cloud 
+      deployment strategies.
+    </p>
+  </section>
+
+  <script>
+    document.getElementById("exp2").innerText = calculateExperience();
+  </script>
+
+  <div class="bg-animation"></div>
 </body>
 </html>
